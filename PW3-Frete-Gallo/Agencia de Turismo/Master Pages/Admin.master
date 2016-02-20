@@ -1,0 +1,9 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Master Pages/Base.Master" AutoEventWireup="true" CodeBehind="Admin.master.cs" Inherits="Agencia_de_Turismo.Master_Pages.Admin" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="CPHCabeceraBase" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="CPHCuerpoBase" runat="server">
+    
+    <asp:ContentPlaceHolder ID="CPHCuerpoAdmin" runat="server"></asp:ContentPlaceHolder>
+
+</asp:Content>
