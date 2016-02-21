@@ -38,7 +38,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -75,9 +81,9 @@
     <Content Include="User Controls\ucMenuAdmin.ascx" />
     <Content Include="User Controls\ucMenuAnonimo.ascx" />
     <Content Include="User Controls\ucMenuUsuario.ascx" />
-    <Content Include="Usuario\historial.aspx" />
-    <Content Include="Usuario\nuevoUsuario.aspx" />
-    <Content Include="Usuario\reservar.aspx" />
+    <Content Include="GrupoUsuario\historial.aspx" />
+    <Content Include="GrupoUsuario\nuevoUsuario.aspx" />
+    <Content Include="GrupoUsuario\reservar.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -154,7 +160,28 @@
     <Compile Include="Master Pages\Usuario.master.designer.cs">
       <DependentUpon>Usuario.master</DependentUpon>
     </Compile>
+    <Compile Include="Modelo.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Modelo.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Modelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Modelo.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Paquete.cs">
+      <DependentUpon>Modelo.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reserva.cs">
+      <DependentUpon>Modelo.tt</DependentUpon>
+    </Compile>
     <Compile Include="User Controls\ucMenuAdmin.ascx.cs">
       <DependentUpon>ucMenuAdmin.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -176,29 +203,50 @@
     <Compile Include="User Controls\ucMenuUsuario.ascx.designer.cs">
       <DependentUpon>ucMenuUsuario.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Usuario\historial.aspx.cs">
+    <Compile Include="GrupoUsuario\historial.aspx.cs">
       <DependentUpon>historial.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Usuario\historial.aspx.designer.cs">
+    <Compile Include="GrupoUsuario\historial.aspx.designer.cs">
       <DependentUpon>historial.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Usuario\nuevoUsuario.aspx.cs">
+    <Compile Include="GrupoUsuario\nuevoUsuario.aspx.cs">
       <DependentUpon>nuevoUsuario.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Usuario\nuevoUsuario.aspx.designer.cs">
+    <Compile Include="GrupoUsuario\nuevoUsuario.aspx.designer.cs">
       <DependentUpon>nuevoUsuario.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Usuario\reservar.aspx.cs">
+    <Compile Include="GrupoUsuario\reservar.aspx.cs">
       <DependentUpon>reservar.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Usuario\reservar.aspx.designer.cs">
+    <Compile Include="GrupoUsuario\reservar.aspx.designer.cs">
       <DependentUpon>reservar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Usuario.cs">
+      <DependentUpon>Modelo.tt</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EntityDeploy Include="Modelo.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Modelo.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Modelo.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Modelo.edmx</DependentUpon>
+      <LastGenOutput>Modelo.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Modelo.edmx.diagram">
+      <DependentUpon>Modelo.edmx</DependentUpon>
+    </Content>
+    <Content Include="Modelo.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Modelo.edmx</DependentUpon>
+      <LastGenOutput>Modelo.cs</LastGenOutput>
+    </Content>
+    <Content Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -208,6 +256,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="fonts\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

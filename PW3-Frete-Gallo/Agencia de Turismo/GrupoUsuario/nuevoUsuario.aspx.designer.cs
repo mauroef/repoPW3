@@ -7,7 +7,7 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace Agencia_de_Turismo.Usuario {
+namespace Agencia_de_Turismo.GrupoUsuario {
     
     
     public partial class nuevoUsuario {

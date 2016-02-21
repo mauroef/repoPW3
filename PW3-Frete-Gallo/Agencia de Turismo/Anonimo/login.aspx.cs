@@ -24,7 +24,7 @@ namespace Agencia_de_Turismo.Anonimo
 
         protected void btnNuevo_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/Usuario/nuevoUsuario.aspx");           
+            Response.Redirect("~/GrupoUsuario/nuevoUsuario.aspx");           
         }
 
     }

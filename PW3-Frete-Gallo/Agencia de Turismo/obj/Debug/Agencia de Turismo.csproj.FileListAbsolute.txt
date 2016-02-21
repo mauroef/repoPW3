@@ -18,3 +18,10 @@ C:\Users\cypre\Dropbox\Desarrollo Web\2.Programacion Web III\Verano\Projects\PW3
 C:\Users\cypre\Dropbox\Desarrollo Web\2.Programacion Web III\Verano\Projects\PW3-Frete-Gallo 1.2\Agencia de Turismo\bin\Agencia de Turismo.dll
 C:\Users\cypre\Dropbox\Desarrollo Web\2.Programacion Web III\Verano\Projects\PW3-Frete-Gallo 1.2\Agencia de Turismo\bin\Agencia de Turismo.pdb
 C:\Users\cypre\Dropbox\Desarrollo Web\2.Programacion Web III\Verano\Projects\PW3-Frete-Gallo 1.2\Agencia de Turismo\obj\Debug\Agencia de Turismo.pdb
+C:\Users\XENOGEAR\Documents\GitHub\repoPW3\PW3-Frete-Gallo\Agencia de Turismo\bin\Agencia de Turismo.dll
+C:\Users\XENOGEAR\Documents\GitHub\repoPW3\PW3-Frete-Gallo\Agencia de Turismo\bin\Agencia de Turismo.pdb
+C:\Users\XENOGEAR\Documents\GitHub\repoPW3\PW3-Frete-Gallo\Agencia de Turismo\obj\Debug\Agencia de Turismo.csprojResolveAssemblyReference.cache
+C:\Users\XENOGEAR\Documents\GitHub\repoPW3\PW3-Frete-Gallo\Agencia de Turismo\obj\Debug\Agencia de Turismo.dll
+C:\Users\XENOGEAR\Documents\GitHub\repoPW3\PW3-Frete-Gallo\Agencia de Turismo\obj\Debug\Agencia de Turismo.pdb
+C:\Users\XENOGEAR\Documents\GitHub\repoPW3\PW3-Frete-Gallo\Agencia de Turismo\bin\EntityFramework.dll
+C:\Users\XENOGEAR\Documents\GitHub\repoPW3\PW3-Frete-Gallo\Agencia de Turismo\bin\EntityFramework.xml

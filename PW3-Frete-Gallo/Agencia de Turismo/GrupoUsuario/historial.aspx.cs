@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace Agencia_de_Turismo.Usuario
+namespace Agencia_de_Turismo.GrupoUsuario
 {
     public partial class historial : System.Web.UI.Page
     {

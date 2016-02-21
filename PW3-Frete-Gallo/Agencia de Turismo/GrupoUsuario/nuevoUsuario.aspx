@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master Pages/Usuario.master" AutoEventWireup="true" CodeBehind="nuevoUsuario.aspx.cs" Inherits="Agencia_de_Turismo.Usuario.nuevoUsuario" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master Pages/Usuario.master" AutoEventWireup="true" CodeBehind="nuevoUsuario.aspx.cs" Inherits="Agencia_de_Turismo.GrupoUsuario.nuevoUsuario" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="CPHCuerpoUsuario" runat="server">
 
     <div class="container">

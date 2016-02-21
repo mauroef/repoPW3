@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master Pages/Usuario.master" AutoEventWireup="true" CodeBehind="historial.aspx.cs" Inherits="Agencia_de_Turismo.Usuario.historial" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Master Pages/Usuario.master" AutoEventWireup="true" CodeBehind="historial.aspx.cs" Inherits="Agencia_de_Turismo.GrupoUsuario.historial" %>
 
 
 <asp:Content ID="Content2" ContentPlaceHolderID="CPHCuerpoUsuario" runat="server">

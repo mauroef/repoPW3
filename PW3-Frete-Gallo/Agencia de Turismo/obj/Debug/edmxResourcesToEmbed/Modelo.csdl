@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TurismoModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="TurismoEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Paquetes" EntityType="TurismoModel.Paquete" />
+    <EntitySet Name="Reservas" EntityType="TurismoModel.Reserva" />
+    <EntitySet Name="Usuarios" EntityType="TurismoModel.Usuario" />
+    <AssociationSet Name="FK_Reserva_Paquete" Association="TurismoModel.FK_Reserva_Paquete">
+      <End Role="Paquete" EntitySet="Paquetes" />
+      <End Role="Reserva" EntitySet="Reservas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Reserva_Usuario" Association="TurismoModel.FK_Reserva_Usuario">
+      <End Role="Usuario" EntitySet="Usuarios" />
+      <End Role="Reserva" EntitySet="Reservas" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Paquete">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Foto" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="FechaInicio" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="FechaFin" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Destacado" Type="Boolean" Nullable="false" />
+    <Property Name="LugaresDisponibles" Type="Int32" />
+    <Property Name="PrecioPorPersona" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Reservas" Relationship="TurismoModel.FK_Reserva_Paquete" FromRole="Paquete" ToRole="Reserva" />
+  </EntityType>
+  <EntityType Name="Reserva">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CantPersonas" Type="Int32" Nullable="false" />
+    <Property Name="FechaCreacion" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="IdPaquete" Type="Int32" Nullable="false" />
+    <Property Name="IdUsuario" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Paquete" Relationship="TurismoModel.FK_Reserva_Paquete" FromRole="Reserva" ToRole="Paquete" />
+    <NavigationProperty Name="Usuario" Relationship="TurismoModel.FK_Reserva_Usuario" FromRole="Reserva" ToRole="Usuario" />
+  </EntityType>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="Contrasenia" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Admin" Type="Boolean" Nullable="false" />
+    <Property Name="Nombre" Type="String" Nullable="false" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="Apellido" Type="String" Nullable="false" MaxLength="200" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Reservas" Relationship="TurismoModel.FK_Reserva_Usuario" FromRole="Usuario" ToRole="Reserva" />
+  </EntityType>
+  <Association Name="FK_Reserva_Paquete">
+    <End Role="Paquete" Type="TurismoModel.Paquete" Multiplicity="1" />
+    <End Role="Reserva" Type="TurismoModel.Reserva" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Paquete">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Reserva">
+        <PropertyRef Name="IdPaquete" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Reserva_Usuario">
+    <End Role="Usuario" Type="TurismoModel.Usuario" Multiplicity="1" />
+    <End Role="Reserva" Type="TurismoModel.Reserva" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Reserva">
+        <PropertyRef Name="IdUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
