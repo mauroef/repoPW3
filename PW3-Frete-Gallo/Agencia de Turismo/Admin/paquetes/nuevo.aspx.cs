@@ -11,37 +11,74 @@ namespace Agencia_de_Turismo.Admin.paquetes
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
-        }
-    }
-}
-/* 
- protected void UploadButton_Click(object sender, EventArgs e)
-{
-    if(FileUploadControl.HasFile)
-    {
-        try
-        {
-            if(FileUploadControl.PostedFile.ContentType == "image/jpeg")
-            {
-                if(FileUploadControl.PostedFile.ContentLength < 102400)
-                {
-                    string filename = Path.GetFileName(FileUploadControl.FileName);
-                    FileUploadControl.SaveAs(Server.MapPath("~/") + filename);
-                    StatusLabel.Text = "Upload status: File uploaded!";
-                }
-                else
-                    StatusLabel.Text = "Upload status: The file has to be less than 100 kb!";
+            if (!Page.IsPostBack) { 
+            
+            
+            
+            
             }
-            else
-                StatusLabel.Text = "Upload status: Only JPEG files are accepted!";
         }
-        catch(Exception ex)
+
+        protected void btnUpload_Click(object sender, EventArgs e)
         {
-            StatusLabel.Text = "Upload status: The file could not be uploaded. The following error occured: " + ex.Message;
+            if (fuFoto.HasFile)
+            {
+                try
+                {
+                    if (fuFoto.PostedFile.ContentType == "image/jpeg")
+                    {
+                        if (fuFoto.PostedFile.ContentLength < 102400)
+                        {
+                            string nombreDeArchivo = fuFoto.FileName;
+                            lblArchivo.Text = nombreDeArchivo;
+                            fuFoto.SaveAs(Server.MapPath("~/imagenes/") + nombreDeArchivo);
+
+                            lblEstado.Text = "El archivo " + lblArchivo.Text + " esta cargado!";
+                        }
+                        else
+                            lblEstado.Text = "El archivo debe ser menor a 100 kb!";
+                    }
+                    else
+                        lblEstado.Text = "solo se aceptan archivos JPEG !";
+                }
+                catch (Exception ex)
+                {
+                    lblEstado.Text = "el archivo no pudo ser subido. El siguiente error ha ocurrido: " + ex.Message;
+                }
+            }
         }
+
+
+
+       
+      
+        protected void btnCrear_Click(object sender, EventArgs e)
+         {
+
+             if (Page.IsValid)
+             {
+
+
+                 TurismoEntities ctx = new TurismoEntities();
+                 Paquete p = new Paquete();
+                 p.Nombre = txtNombre.Text;
+                 p.Descripcion = txtDescripcion.Text;
+                 p.FechaInicio = Convert.ToDateTime(txtFechaInicio.Text);
+                 p.FechaFin = Convert.ToDateTime(txtFechaFin.Text);
+                 p.LugaresDisponibles = Convert.ToInt32(txtLugaresDisp.Text);
+                 p.PrecioPorPersona = Convert.ToInt32(txtPrecio.Text);
+                 p.Destacado = Convert.ToBoolean(cbxDestacado.Checked);
+                 p.Foto = "~/imagenes/" + lblArchivo.Text;
+                 ctx.Paquetes.Add(p);
+                 ctx.SaveChanges();
+
+                 lblResultadoNuevoPaquete.Text =  "El archivo" + lblArchivo.Text + " se cargó correctamente";
+
+             }
+        }
+
+      
+
+          
     }
 }
-
- 
- */

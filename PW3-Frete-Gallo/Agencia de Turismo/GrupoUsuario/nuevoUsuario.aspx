@@ -104,6 +104,9 @@
                 <!--<input type="reset"  value="Cancelar" class="btn btn-primary" />
                 <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" CssClass="btn btn-primary"/>-->
                 <asp:Button ID="btnRegistrarse" runat="server" Text="Registrarse" cssClass="btn btn-primary" OnClick="btnRegistrarse_Click"/>
+                <br />
+                <br />
+                <asp:Label ID="lblResultadoNuevoUsuario" runat="server"></asp:Label>
             </div>
         </fieldset>
     </div>
