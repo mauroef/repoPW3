@@ -15,11 +15,13 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li><a href="../../Anonimo/default.aspx">Inicio <span class="sr-only">(current)</span></a></li>
-        <li><a href="../paquetes/listado.aspx">Listado de Paquetes</a></li>
-        <li><a href="../paquetes/nuevo.aspx">Creacion de Paquetes</a></li>
+        <li><a href="../../Admin/paquetes/listado.aspx">Listado de Paquetes</a></li>
+        <li><a href="../../Admin/paquetes/nuevo.aspx">Creacion de Paquetes</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Logout</a></li>
+        <li>
+            <asp:LinkButton ID="lbtnLogout" runat="server" Text="Logout" OnClick="lbtn_Click" CausesValidation="False"></asp:LinkButton>
+        </li>
       </ul>
     </div>
   </div>

@@ -17,13 +17,13 @@ namespace Agencia_de_Turismo.Master_Pages
         
         private void MostrarUserControl()
         {
-            //variable de ucMenu
-            int tipoMenu = 0;
-            switch (tipoMenu)
+            //Selector de User Control Menu
+            int tipoDeUsuario = Convert.ToInt32(Session["tipoDeUsuario"]);
+            switch (tipoDeUsuario)
             {
-                case 1: ucMenuAdmin.Visible = true;
+                case 0: ucMenuUsuario.Visible = true;
                         break;
-                case 2: ucMenuUsuario.Visible = true;
+                case 1: ucMenuAdmin.Visible = true;
                         break;
                 default: ucMenuAnonimo.Visible = true;
                         break;

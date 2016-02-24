@@ -25,3 +25,16 @@ C:\Users\XENOGEAR\Documents\GitHub\repoPW3\PW3-Frete-Gallo\Agencia de Turismo\ob
 C:\Users\XENOGEAR\Documents\GitHub\repoPW3\PW3-Frete-Gallo\Agencia de Turismo\obj\Debug\Agencia de Turismo.pdb
 C:\Users\XENOGEAR\Documents\GitHub\repoPW3\PW3-Frete-Gallo\Agencia de Turismo\bin\EntityFramework.dll
 C:\Users\XENOGEAR\Documents\GitHub\repoPW3\PW3-Frete-Gallo\Agencia de Turismo\bin\EntityFramework.xml
+C:\Users\XENOGEAR\Dropbox\Desarrollo Web\2.Programacion Web III\Verano\Projects\repoPW3-master\PW3-Frete-Gallo\Agencia de Turismo\bin\Agencia de Turismo.dll
+C:\Users\XENOGEAR\Dropbox\Desarrollo Web\2.Programacion Web III\Verano\Projects\repoPW3-master\PW3-Frete-Gallo\Agencia de Turismo\bin\Agencia de Turismo.pdb
+C:\Users\XENOGEAR\Dropbox\Desarrollo Web\2.Programacion Web III\Verano\Projects\repoPW3-master\PW3-Frete-Gallo\Agencia de Turismo\bin\EntityFramework.dll
+C:\Users\XENOGEAR\Dropbox\Desarrollo Web\2.Programacion Web III\Verano\Projects\repoPW3-master\PW3-Frete-Gallo\Agencia de Turismo\bin\EntityFramework.xml
+C:\Users\XENOGEAR\Dropbox\Desarrollo Web\2.Programacion Web III\Verano\Projects\repoPW3-master\PW3-Frete-Gallo\Agencia de Turismo\obj\Debug\Agencia de Turismo.csprojResolveAssemblyReference.cache
+C:\Users\XENOGEAR\Dropbox\Desarrollo Web\2.Programacion Web III\Verano\Projects\repoPW3-master\PW3-Frete-Gallo\Agencia de Turismo\obj\Debug\Agencia de Turismo.dll
+C:\Users\XENOGEAR\Dropbox\Desarrollo Web\2.Programacion Web III\Verano\Projects\repoPW3-master\PW3-Frete-Gallo\Agencia de Turismo\obj\Debug\Agencia de Turismo.pdb
+C:\Users\cypre\Dropbox\Desarrollo Web\2.Programacion Web III\Verano\Projects\repoPW3-master\PW3-Frete-Gallo\Agencia de Turismo\bin\Agencia de Turismo.dll
+C:\Users\cypre\Dropbox\Desarrollo Web\2.Programacion Web III\Verano\Projects\repoPW3-master\PW3-Frete-Gallo\Agencia de Turismo\bin\Agencia de Turismo.pdb
+C:\Users\cypre\Dropbox\Desarrollo Web\2.Programacion Web III\Verano\Projects\repoPW3-master\PW3-Frete-Gallo\Agencia de Turismo\bin\EntityFramework.dll
+C:\Users\cypre\Dropbox\Desarrollo Web\2.Programacion Web III\Verano\Projects\repoPW3-master\PW3-Frete-Gallo\Agencia de Turismo\bin\EntityFramework.xml
+C:\Users\cypre\Dropbox\Desarrollo Web\2.Programacion Web III\Verano\Projects\repoPW3-master\PW3-Frete-Gallo\Agencia de Turismo\obj\Debug\Agencia de Turismo.dll
+C:\Users\cypre\Dropbox\Desarrollo Web\2.Programacion Web III\Verano\Projects\repoPW3-master\PW3-Frete-Gallo\Agencia de Turismo\obj\Debug\Agencia de Turismo.pdb

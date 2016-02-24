@@ -129,6 +129,8 @@
     <Compile Include="Anonimo\login.aspx.designer.cs">
       <DependentUpon>login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="clases\PaqueteRepositorio.cs" />
+    <Compile Include="clases\UsuarioRepositorio.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

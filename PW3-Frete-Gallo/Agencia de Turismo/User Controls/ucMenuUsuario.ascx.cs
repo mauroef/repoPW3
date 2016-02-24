@@ -13,5 +13,11 @@ namespace Agencia_de_Turismo.User_Controls
         {
 
         }
+
+        protected void lbtn_Click(object sender, EventArgs e)
+        {
+            Session.Abandon();
+            Response.Redirect("~/Anonimo/default.aspx");
+        }
     }
 }

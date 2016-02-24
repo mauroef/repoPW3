@@ -17,7 +17,7 @@ namespace Agencia_de_Turismo
 
         protected void Session_Start(object sender, EventArgs e)
         {
-
+            Session["tipoDeUsuario"] = "2"; //2 = Anonimo(default) 1 = Admin 0 = Usuario
         }
 
         protected void Application_BeginRequest(object sender, EventArgs e)

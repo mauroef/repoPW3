@@ -77,6 +77,11 @@ namespace Agencia_de_Turismo.Admin.paquetes
              }
         }
 
+        protected void btnVolverAnterior_Click(object sender, EventArgs e)
+        {
+            Response.Redirect(Request.UrlReferrer.AbsolutePath);//si se entra directo no apuntará a nada, por lo que se debe hacer un comprobación previa.
+        }
+
       
 
           

@@ -1,11 +1,8 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Base.master.cs" Inherits="Agencia_de_Turismo.Master_Pages.Base" %>
 
 <%@ Register Src="~/User Controls/ucMenuAdmin.ascx" TagPrefix="uc1" TagName="ucMenuAdmin" %>
-<%@ Register Src="~/User Controls/ucMenuAnonimo.ascx" TagPrefix="uc1" TagName="ucMenuAnonimo" %>
-<%@ Register Src="~/User Controls/ucMenuUsuario.ascx" TagPrefix="uc1" TagName="ucMenuUsuario" %>
-
-
-
+<%@ Register Src="~/User Controls/ucMenuAnonimo.ascx" TagPrefix="uc2" TagName="ucMenuAnonimo" %>
+<%@ Register Src="~/User Controls/ucMenuUsuario.ascx" TagPrefix="uc3" TagName="ucMenuUsuario" %>
 
 <!DOCTYPE html>
 
@@ -13,9 +10,6 @@
     <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
-    <!--Archivos JavaScript-->
-    <script type="text/javascript" src="../js/jquery.min.js"></script>
-    <script type="text/javascript" src="../js/bootstrap.min.js" ></script>
     <!--Archivos CSS-->   
     <link type="text/css" rel="stylesheet" href="~/css/bootstrap.min.css" />
     <title>ArgenTour</title>
@@ -23,14 +17,16 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <!--User Control Menu-->
+        <!--User Controls Menu seteados false por default-->
         <uc1:ucMenuAdmin runat="server" ID="ucMenuAdmin" visible="false"/>
-        <uc1:ucMenuAnonimo runat="server" ID="ucMenuAnonimo" visible="false"/>
-        <uc1:ucMenuUsuario runat="server" ID="ucMenuUsuario" visible="false"/>
+        <uc2:ucMenuAnonimo runat="server" ID="ucMenuAnonimo" visible="false"/>
+        <uc3:ucMenuUsuario runat="server" ID="ucMenuUsuario" visible="false"/>
         <div>
             <asp:ContentPlaceHolder ID="CPHCuerpoBase" runat="server"></asp:ContentPlaceHolder>
         </div>
     </form>
-    
+    <!--Archivos JavaScript-->
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/bootstrap.min.js"></script>
 </body>
 </html>

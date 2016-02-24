@@ -8,54 +8,16 @@
             <h1>Paquetes Destacados</h1>
         </div>
     </div>
-    <!--Main Container-->
-    <div class="main container ">
-      <!--Fila de la galeria-->
-      <div class="row">
-        <div class="col-xs-6 col-md-4 col-lg-3">
-          <a class="thumbnail" href="#">
-            <img class="img-responsive" src="../imagenes/imagen.jpg" alt="foto1" />
-          </a>
-        </div>
-        <div class="col-xs-6 col-md-4 col-lg-3">
-          <a class="thumbnail"href="#">
-            <img class="img-responsive" src="../imagenes/imagen.jpg" alt="foto2" />
-          </a>
-        </div>
-        <div class="col-xs-6 col-md-4 col-lg-3">
-          <a class="thumbnail"href="#">
-            <img class="img-responsive" src="../imagenes/imagen.jpg" alt="foto3" />
-          </a>
-        </div>
-        <div class="col-xs-6 col-md-4 col-lg-3">
-          <a class="thumbnail"href="#">
-            <img class="img-responsive" src="../imagenes/imagen.jpg" alt="foto4" />
-          </a>
-        </div>
-        <div class="col-xs-6 col-md-4 col-lg-3">
-          <a class="thumbnail"href="#">
-            <img class="img-responsive" src="../imagenes/imagen.jpg" alt="foto5" />
-          </a>
-        </div>
-        <div class="col-xs-6 col-md-4 col-lg-3">
-          <a class="thumbnail"href="#">
-            <img class="img-responsive" src="../imagenes/imagen.jpg" alt="foto6" />
-          </a>
-        </div>
-        <div class="col-xs-6 col-md-4 col-lg-3">
-          <a class="thumbnail"href="#">
-            <img class="img-responsive" src="../imagenes/imagen.jpg" alt="foto7" />
-          </a>
-        </div>
-        <div class="col-xs-6 col-md-4 col-lg-3">
-          <a class="thumbnail"href="#">
-            <img class="img-responsive" src="../imagenes/imagen.jpg" alt="foto8" />
-          </a>
-        </div>
-        <!--Fin fila de la galeria-->
-        </div>
-    <!--Fin de Main Container-->
-    </div>  
-    <hr />
-
+    
+    <div class="container">
+        <asp:GridView ID="gvPaquetes" runat="server" AutoGenerateColumns="False" ShowHeader="false">
+            <Columns>
+                <asp:TemplateField HeaderText="Foto">
+                    <ItemTemplate>
+                        <asp:Image ID="imgPaquete" runat="server" ImageUrl='<%# Bind("Foto") %>'/>
+                    </ItemTemplate>
+                </asp:TemplateField>
+            </Columns>
+        </asp:GridView>
+    </div>
 </asp:Content>

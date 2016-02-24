@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Agencia_de_Turismo.clases;
 
 namespace Agencia_de_Turismo.Anonimo
 {
@@ -16,9 +17,27 @@ namespace Agencia_de_Turismo.Anonimo
 
         protected void btnIngresar_Click(object sender, EventArgs e)
         {
-            if (Page.IsValid)
+            if (IsValid)
             {
-                Response.Redirect("~/Anonimo/Default.aspx");
+                var usuarioRepo = new UsuarioRepositorio();
+                var usuario = usuarioRepo.ObtenerUsuario(txtEmail.Text, txtPassword.Text);
+                //UsuarioRepositorio usuarioRepo = new UsuarioRepositorio();
+                //Usuario usuario = usuarioRepo.ObtenerUsuario(txtEmail.Text, txtPassword.Text);
+                if (usuario != null)
+                {
+                    HttpContext.Current.Session.Add("Usuario", usuario);
+                    if (usuario.Admin)
+                    {
+                        Session["tipoDeUsuario"] = "1";
+                        Response.Redirect("~/Admin/paquetes/listado.aspx");
+                    }
+                    else
+                    {
+                        Session["tipoDeUsuario"] = "0";
+                        Response.Redirect("~/GrupoUsuario/historial.aspx");
+                    }
+                }
+                else lblMensaje.Text = "Error! Usuario y/o contraseña incorrectos.";
             }
         }
 

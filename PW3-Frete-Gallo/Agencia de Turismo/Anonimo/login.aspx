@@ -46,6 +46,7 @@
             <div>
                 <asp:Button class="btn btn-primary" ID="btnIngresar" runat="server" Text="Ingresar" OnClick="btnIngresar_Click" />
                 <asp:Button class="btn btn-success" ID="btnNuevo" runat="server" Text="Nuevo Usuario" OnClick="btnNuevo_Click" CausesValidation="False" />
+                <asp:Label ID="lblMensaje" runat="server" Font-Bold="True"></asp:Label>                  
             </div>
         </fieldset>
     </div>

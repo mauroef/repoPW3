@@ -42,14 +42,14 @@
                 <asp:Label class="control-label" ID="lblFechaInicio" runat="server" Text="Fecha inicio (dd/mm/aaaa)"></asp:Label>
                 <asp:TextBox class="form-control" ID="txtFechaInicio" runat="server"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="rfvFechaInicio" runat="server" ControlToValidate="txtFechaInicio" ErrorMessage="*">Este campo es obligatorio</asp:RequiredFieldValidator>
-                <asp:RegularExpressionValidator ID="revFechaInicio" runat="server" ControlToValidate="txtFechaInicio" ErrorMessage="Formato de fecha no válido (dd/mm/aaaa)" ValidationExpression="(((0|1)[1-9]|2[1-9]|3[0-1])\/(0[1-9]|1[1-2])\/((19|20)\d\d))$" Display="Dynamic"></asp:RegularExpressionValidator>
+                <asp:RegularExpressionValidator ID="revFechaInicio" runat="server" ControlToValidate="txtFechaInicio" ErrorMessage="Formato de fecha no válido (dd/mm/aaaa)" ValidationExpression="^(0[1-9]|[12][0-9]|3[01])[-/.](0[1-9]|1[012])[-/.](19|20)\d\d$" Display="Dynamic"></asp:RegularExpressionValidator>
             </div>
             
             <div class="form-group"></div>  
             <asp:Label class="control-label" ID="lblFechaFin" runat="server" Text="Fecha fin (dd/mm/aaaa)"></asp:Label>
             <asp:TextBox class="form-control" ID="txtFechaFin" runat="server"></asp:TextBox>
             <asp:RequiredFieldValidator ID="rfvFechaFin" runat="server" ControlToValidate="txtFechaFin" ErrorMessage="*">Este campo es obligatorio</asp:RequiredFieldValidator>
-            <asp:RegularExpressionValidator ID="revFechaFin" runat="server" ControlToValidate="txtFechaFin" ErrorMessage="Formato de fecha no válido (dd/mm/aaaa)" ValidationExpression="(((0|1)[1-9]|2[1-9]|3[0-1])\/(0[1-9]|1[1-2])\/((19|20)\d\d))$" Display="Dynamic"></asp:RegularExpressionValidator>
+            <asp:RegularExpressionValidator ID="revFechaFin" runat="server" ControlToValidate="txtFechaFin" ErrorMessage="Formato de fecha no válido (dd/mm/aaaa)" ValidationExpression="^(0[1-9]|[12][0-9]|3[01])[-/.](0[1-9]|1[012])[-/.](19|20)\d\d$" Display="Dynamic"></asp:RegularExpressionValidator>
             <asp:CompareValidator ID="cvFechaFin" runat="server" ControlToCompare="txtFechaInicio" ControlToValidate="txtFechaFin" ErrorMessage="La fecha de finalización debe ser mayor que la de inicio" Operator="GreaterThan" Display="None" Type="Date"></asp:CompareValidator>
     
             <div class="form-group">      
@@ -74,10 +74,11 @@
         
             <div class="form-group">
                 <asp:Button class="btn btn-primary" ID="btnCrear" runat="server" Text="Crear" OnClick="btnCrear_Click" />
-                <asp:Button class="btn btn-warning" ID="btnVolver" runat="server" Text="Volver" />
+                <asp:LinkButton class="btn btn-warning" ID="btnVolverAnterior" runat="server" CausesValidation="False" Text="Volver" OnClick="btnVolverAnterior_Click"></asp:LinkButton>
                 <br />
                 <br />
                 <asp:Label ID="lblResultadoNuevoPaquete" runat="server"></asp:Label>
+                
             </div>
         </fieldset>
     </div>

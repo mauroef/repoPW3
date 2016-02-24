@@ -11,5 +11,14 @@ namespace Agencia_de_Turismo.User_Controls {
     
     
     public partial class ucMenuUsuario {
+        
+        /// <summary>
+        /// Control lbtnLogout.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lbtnLogout;
     }
 }

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Agencia_de_Turismo.clases;
 
 namespace Agencia_de_Turismo.Anonimo
 {
@@ -11,7 +12,10 @@ namespace Agencia_de_Turismo.Anonimo
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            var paqueteRepo = new PaqueteRepositorio();
 
+            gvPaquetes.DataSource = paqueteRepo.MostrarPaquetesDestacados();
+            gvPaquetes.DataBind();
         }
     }
 }
