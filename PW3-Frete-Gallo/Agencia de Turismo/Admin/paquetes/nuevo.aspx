@@ -10,8 +10,10 @@
         </div>
         <fieldset>
             <legend>Complete el siguiente formulario</legend>
-            
-            <div class="form-group">       
+            <br />
+             <asp:Label ID="lblResultadoNuevoPaquete" runat="server"></asp:Label>
+            <br />
+             <div class="form-group">       
                 <asp:Label class="control-label" ID="lblFoto" runat="server" Text="Foto"></asp:Label>
                 <asp:FileUpload ID="fuFoto" runat="server" />
                 <asp:Button ID="btnUpload" runat="server" Text="Subir Archivo" OnClick="btnUpload_Click" ValidationGroup="ttt" />
@@ -20,11 +22,9 @@
             <asp:Label ID="lblArchivo" runat="server"></asp:Label>
             <br />
              <asp:Label ID="lblEstado" runat="server"></asp:Label>
-            <br />  
-            <br />  
-            
-            
-             <div class="form-group">
+            <br />
+                        
+            <div class="form-group">
                 <asp:Label class="control-label" ID="lblNombre" runat="server" Text="Nombre"></asp:Label>
                 <asp:TextBox class="form-control" ID="txtNombre" runat="server"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="rfvNombre" runat="server" ControlToValidate="txtNombre" ErrorMessage="*">Este campo es obligatorio</asp:RequiredFieldValidator>
@@ -33,24 +33,23 @@
             <div class="form-group">
                 <asp:Label class="control-label" ID="lblDescripcion" runat="server" Text="Descripción"></asp:Label>
                 <asp:TextBox class="form-control" ID="txtDescripcion" runat="server"></asp:TextBox>
-                <asp:RequiredFieldValidator ID="rfvDescripcion" runat="server" ControlToValidate="txtDescripcion" ErrorMessage="*" ValidationGroup="">Este campo es obligatorio</asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="rfvDescripcion" runat="server" ControlToValidate="txtDescripcion" ErrorMessage="*">Este campo es obligatorio</asp:RequiredFieldValidator>
             </div>
 
-                  
-             
+          
             <div class="form-group">   
                 <asp:Label class="control-label" ID="lblFechaInicio" runat="server" Text="Fecha inicio (dd/mm/aaaa)"></asp:Label>
                 <asp:TextBox class="form-control" ID="txtFechaInicio" runat="server"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="rfvFechaInicio" runat="server" ControlToValidate="txtFechaInicio" ErrorMessage="*">Este campo es obligatorio</asp:RequiredFieldValidator>
-                <asp:RegularExpressionValidator ID="revFechaInicio" runat="server" ControlToValidate="txtFechaInicio" ErrorMessage="Formato de fecha no válido (dd/mm/aaaa)" ValidationExpression="^(0[1-9]|[12][0-9]|3[01])[-/.](0[1-9]|1[012])[-/.](19|20)\d\d$" Display="Dynamic"></asp:RegularExpressionValidator>
+                <asp:RegularExpressionValidator ID="revFechaInicio" runat="server" ControlToValidate="txtFechaInicio" ErrorMessage="Formato de fecha no válido (dd/mm/aaaa)" ValidationExpression="(((0|1)[1-9]|2[1-9]|3[0-1])\/(0[1-9]|1[1-2])\/((19|20)\d\d))$" Display="Dynamic"></asp:RegularExpressionValidator>
             </div>
             
             <div class="form-group"></div>  
             <asp:Label class="control-label" ID="lblFechaFin" runat="server" Text="Fecha fin (dd/mm/aaaa)"></asp:Label>
             <asp:TextBox class="form-control" ID="txtFechaFin" runat="server"></asp:TextBox>
             <asp:RequiredFieldValidator ID="rfvFechaFin" runat="server" ControlToValidate="txtFechaFin" ErrorMessage="*">Este campo es obligatorio</asp:RequiredFieldValidator>
-            <asp:RegularExpressionValidator ID="revFechaFin" runat="server" ControlToValidate="txtFechaFin" ErrorMessage="Formato de fecha no válido (dd/mm/aaaa)" ValidationExpression="^(0[1-9]|[12][0-9]|3[01])[-/.](0[1-9]|1[012])[-/.](19|20)\d\d$" Display="Dynamic"></asp:RegularExpressionValidator>
-            <asp:CompareValidator ID="cvFechaFin" runat="server" ControlToCompare="txtFechaInicio" ControlToValidate="txtFechaFin" ErrorMessage="La fecha de finalización debe ser mayor que la de inicio" Operator="GreaterThan" Display="None" Type="Date"></asp:CompareValidator>
+            <asp:RegularExpressionValidator ID="revFechaFin" runat="server" ControlToValidate="txtFechaFin" ErrorMessage="Formato de fecha no válido (dd/mm/aaaa)" ValidationExpression="(((0|1)[1-9]|2[1-9]|3[0-1])\/(0[1-9]|1[1-2])\/((19|20)\d\d))$" Display="Dynamic"></asp:RegularExpressionValidator>
+            <asp:CompareValidator ID="cvFechaFin" runat="server" ControlToCompare="txtFechaInicio" ControlToValidate="txtFechaFin" ErrorMessage="La fecha de finalización debe ser mayor que la de inicio" Operator="GreaterThan" Display="Dynamic" Type="Date"></asp:CompareValidator>
     
             <div class="form-group">      
                 <asp:Label class="control-label" ID="lblLugaresDisp" runat="server" Text="Lugares disponibles"></asp:Label>
@@ -74,10 +73,7 @@
         
             <div class="form-group">
                 <asp:Button class="btn btn-primary" ID="btnCrear" runat="server" Text="Crear" OnClick="btnCrear_Click" />
-                <asp:LinkButton class="btn btn-warning" ID="btnVolverAnterior" runat="server" CausesValidation="False" Text="Volver" OnClick="btnVolverAnterior_Click"></asp:LinkButton>
-                <br />
-                <br />
-                <asp:Label ID="lblResultadoNuevoPaquete" runat="server"></asp:Label>
+                <asp:LinkButton  class="btn btn-primary" ID="btnVolver" runat="server" PostBackUrl="~/Admin/paquetes/listado.aspx" Text="Volver" CausesValidation="False"/>
                 
             </div>
         </fieldset>

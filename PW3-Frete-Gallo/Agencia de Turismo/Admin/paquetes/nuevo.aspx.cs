@@ -11,11 +11,25 @@ namespace Agencia_de_Turismo.Admin.paquetes
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!Page.IsPostBack) { 
-            
-            
-            
-            
+            if (!Page.IsPostBack)
+            {
+                /*
+                 Usuario usuario = new Usuario(); // Lo obtengo de BaseDeDatos.Modelo.Usuario
+                usuario = (Usuario)Session["Usuario"];
+
+                if (usuario == null || usuario.Admin != true)
+                {
+                    HttpContext.Current.Session.Clear();
+                    HttpContext.Current.Session.Abandon();
+                    Response.Redirect(@"..\login.aspx", false);
+                    return;
+                }
+                 
+                 
+                 */
+
+                lblEstado.Text = "";
+
             }
         }
 
@@ -33,7 +47,7 @@ namespace Agencia_de_Turismo.Admin.paquetes
                             lblArchivo.Text = nombreDeArchivo;
                             fuFoto.SaveAs(Server.MapPath("~/imagenes/") + nombreDeArchivo);
 
-                            lblEstado.Text = "El archivo " + lblArchivo.Text + " esta cargado!";
+                            lblEstado.Text = "El archivo esta cargado!";
                         }
                         else
                             lblEstado.Text = "El archivo debe ser menor a 100 kb!";
@@ -50,38 +64,49 @@ namespace Agencia_de_Turismo.Admin.paquetes
 
 
 
-       
-      
         protected void btnCrear_Click(object sender, EventArgs e)
-         {
-
-             if (Page.IsValid)
-             {
-
-
-                 TurismoEntities ctx = new TurismoEntities();
-                 Paquete p = new Paquete();
-                 p.Nombre = txtNombre.Text;
-                 p.Descripcion = txtDescripcion.Text;
-                 p.FechaInicio = Convert.ToDateTime(txtFechaInicio.Text);
-                 p.FechaFin = Convert.ToDateTime(txtFechaFin.Text);
-                 p.LugaresDisponibles = Convert.ToInt32(txtLugaresDisp.Text);
-                 p.PrecioPorPersona = Convert.ToInt32(txtPrecio.Text);
-                 p.Destacado = Convert.ToBoolean(cbxDestacado.Checked);
-                 p.Foto = "~/imagenes/" + lblArchivo.Text;
-                 ctx.Paquetes.Add(p);
-                 ctx.SaveChanges();
-
-                 lblResultadoNuevoPaquete.Text =  "El archivo" + lblArchivo.Text + " se cargó correctamente";
-
-             }
-        }
-
-        protected void btnVolverAnterior_Click(object sender, EventArgs e)
         {
-            Response.Redirect(Request.UrlReferrer.AbsolutePath);//si se entra directo no apuntará a nada, por lo que se debe hacer un comprobación previa.
+
+            if (Page.IsValid)
+            {
+
+
+                var paqueteRepo = new PaqueteRepositorio();
+
+                var paquete = new Paquete();
+
+                paquete.Nombre = txtNombre.Text;
+                paquete.Descripcion = txtDescripcion.Text;
+                paquete.FechaInicio = Convert.ToDateTime(txtFechaInicio.Text);
+                paquete.FechaFin = Convert.ToDateTime(txtFechaFin.Text);
+                paquete.LugaresDisponibles = Convert.ToInt32(txtLugaresDisp.Text);
+                paquete.PrecioPorPersona = Convert.ToInt32(txtPrecio.Text);
+                paquete.Destacado = Convert.ToBoolean(cbxDestacado.Checked);
+                paquete.Foto = "~/imagenes/" + lblArchivo.Text;
+
+
+                //   lblResultadoNuevoPaquete.Text = "~/imagenes/" + lblArchivo.Text;
+
+                if (paqueteRepo.CrearPaquete(paquete) > 0)
+                {
+                    txtNombre.Text = "";
+                    txtDescripcion.Text = "";
+                    txtFechaInicio.Text = "";
+                    txtFechaFin.Text = "";
+                    txtLugaresDisp.Text = "";
+                    txtPrecio.Text = "";
+                    cbxDestacado.Checked = false;
+                    lblArchivo.Text = "";
+                    lblEstado.Text = "";
+                    lblResultadoNuevoPaquete.Text = "El Paquete fue creado exitosamente";
+                }
+                else
+                    lblResultadoNuevoPaquete.Text = "No se pudo crear el Paquete";
+
+            }
         }
 
+       
       
 
           

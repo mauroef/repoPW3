@@ -13,6 +13,15 @@ namespace Agencia_de_Turismo.Admin.paquetes {
     public partial class nuevo {
         
         /// <summary>
+        /// Control lblResultadoNuevoPaquete.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblResultadoNuevoPaquete;
+        
+        /// <summary>
         /// Control lblFoto.
         /// </summary>
         /// <remarks>
@@ -292,21 +301,12 @@ namespace Agencia_de_Turismo.Admin.paquetes {
         protected global::System.Web.UI.WebControls.Button btnCrear;
         
         /// <summary>
-        /// Control btnVolverAnterior.
+        /// Control btnVolver.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnVolverAnterior;
-        
-        /// <summary>
-        /// Control lblResultadoNuevoPaquete.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblResultadoNuevoPaquete;
+        protected global::System.Web.UI.WebControls.LinkButton btnVolver;
     }
 }

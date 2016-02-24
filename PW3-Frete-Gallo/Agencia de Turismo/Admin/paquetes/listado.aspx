@@ -3,18 +3,36 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="CPHCuerpoAdmin" runat="server">
 <div>
     <div>
-        <p>Listado de paquetes</p>
+        <p>Listado de paquetes
+            <asp:GridView ID="gvListaPaquetes" runat="server" OnRowCommand="gvListaPaquetes_RowCommand" AutoGenerateColumns="False" >
+
+                 <Columns>
+                    <asp:BoundField DataField="Nombre" HeaderText="Nombre" >
+                    <HeaderStyle HorizontalAlign="Center" />
+                    </asp:BoundField>
+                    <asp:BoundField DataField="FechaInicio" HeaderText="Inicio" >
+                    <HeaderStyle HorizontalAlign="Center" />
+                    </asp:BoundField>
+                    <asp:BoundField DataField="FechaFin" HeaderText="Fin" >
+                    <HeaderStyle HorizontalAlign="Center" />
+                    </asp:BoundField>
+                    <asp:BoundField DataField="PrecioPorPersona" HeaderText="Precio por persona" >
+                    <FooterStyle HorizontalAlign="Right" />
+                    <HeaderStyle HorizontalAlign="Center" />
+                    </asp:BoundField>
+                    <asp:BoundField DataField="LugaresDisponibles" HeaderText="Lugares disponibles" >
+                    <HeaderStyle HorizontalAlign="Center" />
+                    </asp:BoundField>
+                    <asp:CheckBoxField DataField="Destacado" HeaderText="Destacado" />
+                    <asp:ButtonField Text="Eliminar Paquete" ButtonType="Button" CommandName="Eliminar" />
+                </Columns>
+
+
+
+
+            </asp:GridView>
+        </p>
     </div>
-     <asp:GridView ID="GridView1" runat="server" Width="221px" AutoGenerateColumns="False" Height="99px" ShowHeaderWhenEmpty="True" >
-            <Columns>
-                <asp:BoundField HeaderText="Nombre" ItemStyle-Width="30" DataField="Nombre" />
-                <asp:BoundField HeaderText="Inicio" ItemStyle-Width="30" DataField="Inicio" />
-                <asp:BoundField HeaderText="Fin" ItemStyle-Width="30" DataField="Fin" />
-                <asp:BoundField HeaderText="Precio" ItemStyle-Width="30" DataField="Precio" />
-                <asp:BoundField HeaderText="Destacados" ItemStyle-Width="30" DataField="Destacados" />
-                <asp:BoundField HeaderText="Eliminar" ItemStyle-Width="30" />
-            </Columns>
-        </asp:GridView>
 </div>
    
 </asp:Content>
