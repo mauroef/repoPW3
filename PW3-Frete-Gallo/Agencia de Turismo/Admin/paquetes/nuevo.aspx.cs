@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Agencia_de_Turismo.clases;
 
 namespace Agencia_de_Turismo.Admin.paquetes
 {
@@ -45,7 +46,7 @@ namespace Agencia_de_Turismo.Admin.paquetes
                         {
                             string nombreDeArchivo = fuFoto.FileName;
                             lblArchivo.Text = nombreDeArchivo;
-                            fuFoto.SaveAs(Server.MapPath("~/imagenes/") + nombreDeArchivo);
+                            fuFoto.SaveAs(Server.MapPath("~/Fotos/") + nombreDeArchivo);
 
                             lblEstado.Text = "El archivo esta cargado!";
                         }
@@ -104,6 +105,11 @@ namespace Agencia_de_Turismo.Admin.paquetes
                     lblResultadoNuevoPaquete.Text = "No se pudo crear el Paquete";
 
             }
+        }
+
+        protected void btnVolver_Click(object sender, EventArgs e)
+        {
+            
         }
 
        

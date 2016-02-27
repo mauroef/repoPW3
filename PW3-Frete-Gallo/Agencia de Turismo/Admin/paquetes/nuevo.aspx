@@ -73,8 +73,7 @@
         
             <div class="form-group">
                 <asp:Button class="btn btn-primary" ID="btnCrear" runat="server" Text="Crear" OnClick="btnCrear_Click" />
-                <asp:LinkButton  class="btn btn-primary" ID="btnVolver" runat="server" PostBackUrl="~/Admin/paquetes/listado.aspx" Text="Volver" CausesValidation="False"/>
-                
+                <asp:LinkButton  class="btn btn-danger" ID="btnVolver" runat="server" href="javascript:history.go(-1)" Text="Volver" CausesValidation="False" OnClick="btnVolver_Click"/>
             </div>
         </fieldset>
     </div>

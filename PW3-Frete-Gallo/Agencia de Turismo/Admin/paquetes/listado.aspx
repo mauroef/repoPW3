@@ -2,9 +2,11 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="CPHCuerpoAdmin" runat="server">
 <div>
-    <div>
-        <p>Listado de paquetes
-            <asp:GridView ID="gvListaPaquetes" runat="server" OnRowCommand="gvListaPaquetes_RowCommand" AutoGenerateColumns="False" >
+    <div class="container">
+        <div class="page-header">
+            <h1>Listado de Paquetes</h1>
+        </div>
+            <asp:GridView ID="gvListaPaquetes" runat="server" CssClass="table table-hover table-bordered" AutoGenerateColumns="False" >
 
                  <Columns>
                     <asp:BoundField DataField="Nombre" HeaderText="Nombre" >
@@ -31,7 +33,7 @@
 
 
             </asp:GridView>
-        </p>
+    
     </div>
 </div>
    

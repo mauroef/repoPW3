@@ -14,8 +14,9 @@ namespace Agencia_de_Turismo.Anonimo
         {
             var paqueteRepo = new PaqueteRepositorio();
 
-            gvPaquetes.DataSource = paqueteRepo.MostrarPaquetesDestacados();
-            gvPaquetes.DataBind();
+            dlFotos.DataSource = paqueteRepo.ObtenerListaDePaquetesDestacados();
+            dlFotos.DataBind();
+
         }
     }
 }

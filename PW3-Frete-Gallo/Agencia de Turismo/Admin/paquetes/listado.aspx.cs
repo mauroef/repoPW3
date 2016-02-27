@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Agencia_de_Turismo.clases;
 
 namespace Agencia_de_Turismo.Admin.paquetes
 {
@@ -14,7 +15,7 @@ namespace Agencia_de_Turismo.Admin.paquetes
 
             if (!Page.IsPostBack)
             {
-                /*
+                
                  Usuario usuario = new Usuario();
                 usuario = (Usuario)Session["Usuario"];
 
@@ -28,14 +29,14 @@ namespace Agencia_de_Turismo.Admin.paquetes
 
                            
                  
-                 */
+                 
                 var paqueteRepo = new PaqueteRepositorio();
 
                 gvListaPaquetes.DataSource = paqueteRepo.ObtenerListaDePaquetes();
                 gvListaPaquetes.DataBind();
+
             }
         }
-
 
 
 
@@ -47,7 +48,7 @@ namespace Agencia_de_Turismo.Admin.paquetes
              if (e.CommandName == "Eliminar")
              {
                  var paqueteRepo = new PaqueteRepositorio();
-    /*
+    
              
                 
                  //OBTENGO Paquete SELECCIONADO

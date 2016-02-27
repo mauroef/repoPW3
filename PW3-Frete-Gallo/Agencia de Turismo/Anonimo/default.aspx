@@ -8,16 +8,18 @@
             <h1>Paquetes Destacados</h1>
         </div>
     </div>
-    
+
     <div class="container">
-        <asp:GridView ID="gvPaquetes" runat="server" AutoGenerateColumns="False" ShowHeader="false">
-            <Columns>
-                <asp:TemplateField HeaderText="Foto">
-                    <ItemTemplate>
-                        <asp:Image ID="imgPaquete" runat="server" ImageUrl='<%# Bind("Foto") %>'/>
-                    </ItemTemplate>
-                </asp:TemplateField>
-            </Columns>
-        </asp:GridView>
+
     </div>
+
+    <div class ="container">
+        <asp:DataList ID="dlFotos" runat="server" RepeatColumns="3" CssClass="table">
+        <ItemTemplate>
+            <asp:Image ID="imgPaquete" class="img-responsive" runat="server" ImageUrl='<%# Bind("Foto") %>' Width="250" Height="250" />
+        </ItemTemplate>
+        <ItemStyle HorizontalAlign="Center" VerticalAlign="Bottom" BorderStyle="None" />
+    </asp:DataList>
+    </div>
+
 </asp:Content>
